@@ -1,0 +1,21 @@
+---
+# Source: ei-pattern-1/charts/mysql-ei/charts/mysql/templates/svc.yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: wso2ei-rdbms-service-mysql
+  namespace: wso2-ei
+  labels:
+    app: wso2ei-rdbms-service-mysql
+    chart: "mysql-1.6.9"
+    release: "wsoei"
+    heritage: "Helm"
+  annotations:
+spec:
+  type: ClusterIP
+  ports:
+  - name: mysql
+    port: 3306
+    targetPort: mysql
+  selector:
+    app: wso2ei-rdbms-service-mysql

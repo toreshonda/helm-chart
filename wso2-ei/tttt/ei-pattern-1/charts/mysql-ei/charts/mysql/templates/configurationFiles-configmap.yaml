@@ -1,0 +1,11 @@
+---
+# Source: ei-pattern-1/charts/mysql-ei/charts/mysql/templates/configurationFiles-configmap.yaml
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: wso2ei-rdbms-service-mysql-configuration
+  namespace: wso2-ei
+data:
+  mysql.cnf: |-
+    [mysqld]
+    max_connections = 10000

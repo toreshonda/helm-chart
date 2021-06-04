@@ -1,0 +1,29 @@
+---
+# Source: ei-pattern-1/charts/mysql-ei/charts/mysql/templates/tests/test.yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: wso2ei-rdbms-service-mysql-test
+  namespace: wso2-ei
+  labels:
+    app: wso2ei-rdbms-service-mysql
+    chart: "mysql-1.6.9"
+    heritage: "Helm"
+    release: "wsoei"
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wsoei-test
+      image: "bats/bats:1.2.1"
+      imagePullPolicy: "IfNotPresent"
+      command: ["/opt/bats/bin/bats", "-t", "/tests/run.sh"]
+      volumeMounts:
+      - mountPath: /tests
+        name: tests
+        readOnly: true
+  volumes:
+  - name: tests
+    configMap:
+      name: wso2ei-rdbms-service-mysql-test
+  restartPolicy: Never

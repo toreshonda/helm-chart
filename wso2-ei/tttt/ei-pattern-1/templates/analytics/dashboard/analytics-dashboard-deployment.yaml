@@ -1,0 +1,94 @@
+---
+# Source: ei-pattern-1/templates/analytics/dashboard/analytics-dashboard-deployment.yaml
+# Copyright (c) 2018, WSO2 Inc. (http://www.wso2.org) All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+# http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wso2ei-pattern-1-analytics-dashboard
+  namespace : wso2-ei
+spec:
+  replicas:  1
+  minReadySeconds: 30
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      deployment: wso2ei-pattern-1-analytics-dashboard
+      app: wso2ei-pattern-1
+      monitoring: jmx
+  template:
+    metadata:
+      labels:
+        deployment: wso2ei-pattern-1-analytics-dashboard
+        app: wso2ei-pattern-1
+        monitoring: jmx
+    spec:
+      initContainers:
+      
+      
+      - name: init-is-db
+        image: busybox:1.31
+        command: ['sh', '-c', 'echo -e "Checking for the availability of MySQL Server deployment"; while ! nc -z wso2ei-rdbms-service-mysql 3306; do sleep 1; printf "-"; done; echo -e "  >> MySQL Server has started";']
+      
+      
+      containers:
+      - name: wso2ei-analytics-dashboard        
+        image: wso2/wso2ei-analytics-dashboard:6.6.0
+        livenessProbe:
+          exec:
+            command:
+              - /bin/sh
+              - -c
+              - nc -z localhost 9643
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        readinessProbe:
+          exec:
+            command:
+              - /bin/sh
+              - -c
+              - nc -z localhost 9643
+          initialDelaySeconds: 20
+          periodSeconds: 10
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: 4Gi
+            cpu: 2000m
+          limits:
+            memory: 4Gi
+            cpu: 2000m
+        ports:
+        - containerPort: 9643
+          protocol: "TCP"
+        volumeMounts:
+        - name: analytics-conf-dashboard
+          mountPath: "/home/wso2carbon/wso2-config-volume/wso2/analytics/conf/dashboard"
+        
+      
+        lifecycle:
+          preStop:
+            exec:
+              command:  ['sh', '-c', '${WSO2_SERVER_HOME}/bin/analytics-dashboard.sh stop']
+      securityContext:
+        runAsUser: 802
+      volumes:
+      - name: analytics-conf-dashboard
+        configMap:
+          name: analytics-conf-dashboard
+      
+      
+      serviceAccountName: wso2svc-account

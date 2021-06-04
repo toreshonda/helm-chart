@@ -1,0 +1,18 @@
+---
+# Source: ei-pattern-1/charts/mysql-ei/charts/mysql/templates/pvc.yaml
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  name: wso2ei-rdbms-service-mysql
+  namespace: wso2-ei
+  labels:
+    app: wso2ei-rdbms-service-mysql
+    chart: "mysql-1.6.9"
+    release: "wsoei"
+    heritage: "Helm"
+spec:
+  accessModes:
+    - "ReadWriteOnce"
+  resources:
+    requests:
+      storage: "8Gi"

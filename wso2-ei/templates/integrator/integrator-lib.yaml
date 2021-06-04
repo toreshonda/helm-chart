@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: integrator-lib
+  namespace : {{ .Release.Namespace }}
+binaryData:
+  {{- $hostname := printf "%s%s" .Release.Name "-gateway" }}
+  {{- $mgtHostname := printf "%s%s" .Release.Name "-integrator" }}
+  {{- $fullname := include "fullname" . }}
+  {{- $workerService1 := printf "%s%s" $fullname "-analytics-worker-service-1" }}
+  {{- $workerService2 := printf "%s%s" $fullname "-analytics-worker-service-2" }}
+  {{- $file := .Files }}
+  {{- range $path, $byte := .Files.Glob "confs/integrator/lib/*" }}
+  {{- $list := $path | splitList "/"}}
+  {{- $length := len $list }}
+  {{- $last := add $length -1 }}
+  {{ index $list $last }}: >-
+  {{ $.Files.Get $path | b64enc | indent 4}}
+  {{- end }}
+
