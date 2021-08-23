@@ -3,9 +3,9 @@ entries:
   docker-registry:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2021-08-23T13:15:40.477538847Z"
+    created: "2021-08-23T13:21:33.543155866Z"
     description: A Helm chart for Docker Registry
-    digest: 429b1b6a2fac0c8b7d87c0070e74284832907d7a81bb47f98418a2d2d07b8fd6
+    digest: d8a11c48ae16b6c5217924e25fafaaa0b6ad10263de176b41959535a2ae94f08
     home: https://hub.docker.com/_/registry/
     icon: https://hub.docker.com/public/images/logos/mini-logo.svg
     maintainers:
@@ -21,7 +21,7 @@ entries:
   wso2-ei:
   - apiVersion: v1
     appVersion: 6.6.0
-    created: "2021-08-23T13:15:40.492735707Z"
+    created: "2021-08-23T13:21:33.556816939Z"
     dependencies:
     - condition: wso2.mysql.enabled
       name: mysql-ei
@@ -33,4 +33,4 @@ entries:
     urls:
     - https://toreshonda.github.io/helm-chart/wso2-ei-6.6.0-3.tgz
     version: 6.6.0-3
-generated: "2021-08-23T13:15:40.475976026Z"
+generated: "2021-08-23T13:21:33.54160376Z"
