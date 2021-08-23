@@ -3,7 +3,7 @@ entries:
   cerebro:
   - apiVersion: v1
     appVersion: 0.9.2
-    created: "2021-06-04T12:15:52.530728905Z"
+    created: "2021-08-23T12:25:55.562236356Z"
     deprecated: true
     description: DEPRECATED A Helm chart for Cerebro - a web admin tool that replaces Kopf.
     digest: 4dabe2ff9a3eead71cbd6e13e7b4af415542bef0ef32fdf69eb7da04b63ee7e7
@@ -19,7 +19,7 @@ entries:
   docker-registry:
   - apiVersion: v1
     appVersion: 2.7.1
-    created: "2021-06-04T12:15:52.532305649Z"
+    created: "2021-08-23T12:25:55.564109817Z"
     description: A Helm chart for Docker Registry
     digest: ba7d21cf60c4e54379e22a601139c50af66e315bb0804bd23a84da6d26a3e3a2
     home: https://hub.docker.com/_/registry/
@@ -37,7 +37,7 @@ entries:
   fluentd-elasticsearch:
   - apiVersion: v1
     appVersion: 3.0.4
-    created: "2021-06-04T12:15:52.534823453Z"
+    created: "2021-08-23T12:25:55.566848082Z"
     deprecated: true
     description: A Fluentd Helm chart for Kubernetes with Elasticsearch output
     digest: 7237c16044dc0d2a34113d3c7266678c3257ba463376d1d2c13501893d60106d
@@ -64,7 +64,7 @@ entries:
         - Removes the possibility of using localhost in ExternalNames as endpoints
     apiVersion: v2
     appVersion: 0.46.0
-    created: "2021-06-04T12:15:52.539083723Z"
+    created: "2021-08-23T12:25:55.573772932Z"
     description: Ingress controller for Kubernetes using NGINX as a reverse proxy and load balancer
     digest: 5d90062df12d7f6459248252e79c7e58c9390d3be685de97ccb81429bd1530fd
     home: https://github.com/kubernetes/ingress-nginx
@@ -100,7 +100,7 @@ entries:
           url: https://www.jenkins.io/
     apiVersion: v2
     appVersion: 2.277.4
-    created: "2021-06-04T12:15:52.548373692Z"
+    created: "2021-08-23T12:25:55.584817113Z"
     description: Jenkins - Build great things at any scale! The leading open source automation server, Jenkins provides hundreds of plugins to support building, deploying and automating any project.
     digest: 131383e84ed70e92081d1171bde5015e2e20fecc0c36c7787407fdbce8ecb469
     home: https://jenkins.io/
@@ -128,7 +128,7 @@ entries:
   kibana:
   - apiVersion: v1
     appVersion: 7.12.1
-    created: "2021-06-04T12:15:52.550185416Z"
+    created: "2021-08-23T12:25:55.586692731Z"
     description: Official Elastic helm chart for Kibana
     digest: b2ca1a1ded000b2dc595bacd6f05b9209fb3903354af68ac0edd36d3c9f25d92
     home: https://github.com/elastic/helm-charts
@@ -152,7 +152,7 @@ entries:
       artifacthub.io/operator: "true"
     apiVersion: v2
     appVersion: 0.47.1
-    created: "2021-06-04T12:15:52.605238478Z"
+    created: "2021-08-23T12:25:55.629816283Z"
     dependencies:
     - condition: kubeStateMetrics.enabled
       name: kube-state-metrics
@@ -197,7 +197,7 @@ entries:
   metrics-server:
   - apiVersion: v1
     appVersion: 0.3.6
-    created: "2021-06-04T12:15:52.606725803Z"
+    created: "2021-08-23T12:25:55.631289726Z"
     deprecated: true
     description: DEPRECATED - Metrics Server is a cluster-wide aggregator of resource usage data.
     digest: 1b94c585a43afea9948be0a18579dc103449b9791a570fa55b9d492d7f9a3134
@@ -213,7 +213,7 @@ entries:
   minio:
   - apiVersion: v1
     appVersion: master
-    created: "2021-06-04T12:15:52.609643462Z"
+    created: "2021-08-23T12:25:55.634407297Z"
     deprecated: true
     description: DEPRECATED MinIO is a high performance data infrastructure for machine learning, analytics and application data workloads.
     digest: ecae27a021119e2ba8d611413fac74bd8804a09cd278f80a7a8997b5dbe732fe
@@ -232,7 +232,7 @@ entries:
   nfs-subdir-external-provisioner:
   - apiVersion: v1
     appVersion: 4.0.2
-    created: "2021-06-04T12:15:52.615939843Z"
+    created: "2021-08-23T12:25:55.635588374Z"
     description: nfs-subdir-external-provisioner is an automatic provisioner that used your *already configured* NFS server, automatically creating Persistent Volumes.
     digest: 39cf37c5a1d981ae4fab5eb0e4f5cef00f000f4d9555576b51c7b0fcf5467fcf
     home: https://github.com/kubernetes-sigs/nfs-subdir-external-provisioner
@@ -250,7 +250,7 @@ entries:
   prometheus-adapter:
   - apiVersion: v1
     appVersion: v0.8.4
-    created: "2021-06-04T12:15:52.618231375Z"
+    created: "2021-08-23T12:25:55.636823153Z"
     description: A Helm chart for k8s prometheus adapter
     digest: cf33cf4383ee60a0e1975c8df91cb1487f67b10fd2a629bd89f4feb9be4c4b97
     home: https://github.com/DirectXMan12/k8s-prometheus-adapter
@@ -275,9 +275,9 @@ entries:
   prometheus-postgres-exporter:
   - apiVersion: v2
     appVersion: 0.9.0
-    created: "2021-06-04T12:15:52.620218287Z"
+    created: "2021-08-23T12:25:55.638524938Z"
     description: A Helm chart for prometheus postgres-exporter
-    digest: 6f5dbfce751e3da547d1f646ec1c900400bfcbf3f14f137ca6b171ed19ff773b
+    digest: e3846d14c0f9116bff9f07dc9339b49323c9ffdefb12a0e2555b5511deef0a67
     home: https://github.com/prometheus-community/postgres_exporter
     keywords:
     - postgresql
@@ -293,14 +293,14 @@ entries:
     - https://github.com/prometheus-community/postgres_exporter
     type: application
     urls:
-    - https://toreshonda.github.io/helm-chart/prometheus-postgres-exporter-2.3.1.tgz
-    version: 2.3.1
+    - https://toreshonda.github.io/helm-chart/prometheus-postgres-exporter-2.3.2.tgz
+    version: 2.3.2
   redis:
   - annotations:
       category: Database
     apiVersion: v2
     appVersion: 6.2.3
-    created: "2021-06-04T12:15:52.631417936Z"
+    created: "2021-08-23T12:25:55.646314897Z"
     dependencies:
     - name: common
       repository: https://charts.bitnami.com/bitnami
@@ -330,7 +330,7 @@ entries:
   strimzi-kafka-operator:
   - apiVersion: v2
     appVersion: 0.23.0
-    created: "2021-06-04T12:15:52.643407642Z"
+    created: "2021-08-23T12:25:55.655183894Z"
     description: 'Strimzi: Apache Kafka running on Kubernetes'
     digest: 9f9696b4483fb4e78a752db146c4eb1fdc7e5c83029cd8e8f5b7f3f7f5741332
     home: https://strimzi.io/
@@ -359,7 +359,7 @@ entries:
   wso2-ei:
   - apiVersion: v1
     appVersion: 6.6.0
-    created: "2021-06-04T12:15:52.656605494Z"
+    created: "2021-08-23T12:25:55.668999927Z"
     dependencies:
     - condition: wso2.mysql.enabled
       name: mysql-ei
@@ -371,4 +371,4 @@ entries:
     urls:
     - https://toreshonda.github.io/helm-chart/wso2-ei-6.6.0-3.tgz
     version: 6.6.0-3
-generated: "2021-06-04T12:15:52.529424029Z"
+generated: "2021-08-23T12:25:55.560681467Z"
